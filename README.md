@@ -24,3 +24,26 @@ from posts import views
 ```
 
 - posts 앱에 templates 생성
+
+- 서버 실행 (종료는 `ctrl c`)
+```shell
+python manage.py runserver # 터미널 창에서 ctrl 누르고 링크 클릭
+```
+
+## 2.CRUD
+|CRUD|조작|SQL| 
+|------|---|---|
+|create|생성|INSERT|
+|read|읽기|SELECT|
+|update|갱신|UPDATE|
+|delete|삭제|DELETE|
+
+
+- modeling
+    - `models.py`에서 함(class 정의)
+    
+``` python
+class Post(models.Model):
+    title = models.CharFiled(max_length=100) # 글자를 저장, max_length를 꼭 작성
+    content = models.TextFiled()
+```
