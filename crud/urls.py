@@ -21,5 +21,11 @@ from posts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index', views.index),
+    # READ ALL
+    path('index/', views.index),
+    # READ (1)
+    path('posts/<int:id>/', views.detail),
+    # Create 
+    path('posts/new/', views.new), # 포스트 작성
+    path('posts/create/', views.create), # 포스트 저장
 ]

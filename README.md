@@ -78,9 +78,13 @@ passwd - 1234
     posts = Post.objects.all() # Post 모델의 모든 레코드를 가져옴 (QuerySet 형태)
     ```
 
--   ```python
-    {% for post in posts %}
+- 모든 게시물 읽기(Read(ALL)기능 구현')
+    -   ```python
+        {% for post in posts %}
         <p>{{post}}</p>
-    {% endfor %}
-    # posts를 순회하면서 각 post를 <p> 태그로 출력
+        {% endfor %}
+        # posts를 순회하면서 각 post를 <p> 태그로 출력
     ```
+
+- 하나의 게시물의 상세페이지 읽기
+    - `'posts/<int:id>'` 특정 id 값을 가진 Post를 조회하는 뷰

@@ -7,9 +7,11 @@
 </head>
 <body>
     <h1>dd</h1>
+    <a href="/posts/new/">new</a> <!-- 게시물을 새로 만들기 편하게 하기 위해 링크 -->
     {% for post in posts %}
         <p>{{post.title}}</p>
         <p>{{post.content}}</p>
+        <a href="/posts/{{post.id}}/">detail</a>
         <hr>
     {% endfor %}
 </body>
