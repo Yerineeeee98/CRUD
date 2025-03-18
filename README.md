@@ -41,9 +41,21 @@ python manage.py runserver # 터미널 창에서 ctrl 누르고 링크 클릭
 
 - modeling
     - `models.py`에서 함(class 정의)
-    
+
 ``` python
-class Post(models.Model):
-    title = models.CharFiled(max_length=100) # 글자를 저장, max_length를 꼭 작성
-    content = models.TextFiled()
+class Post(models.Model): # 클래스의 이름을 단수로 작성 (게시물이라는 정의를 나타냄)
+    title = models.CharField(max_length=100) # 글자를 저장, max_length를 꼭 작성
+    content = models.TextField()
 ```
+
+- migration(python -> sql로 이주)
+```shell
+# 번역본 생성
+python manage.py makemigration
+```
+
+```shell
+# DB에 반영
+python manage.py migrate
+```
+
