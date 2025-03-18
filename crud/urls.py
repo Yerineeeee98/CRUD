@@ -22,10 +22,15 @@ from posts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # READ ALL
-    path('index/', views.index),
+    path('posts/', views.index),
     # READ (1)
     path('posts/<int:id>/', views.detail),
     # Create 
     path('posts/new/', views.new), # 포스트 작성
     path('posts/create/', views.create), # 포스트 저장
+    # Delete
+    path('posts/<int:id>/delete/', views.delete), # 포스트의 몇번 게시물을 지워주기
+    # Update
+    path('posts/<int:id>/edit/', views.edit),
+    path('posts/<int:id>/update/',views.update),
 ]

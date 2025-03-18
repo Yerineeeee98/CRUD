@@ -39,3 +39,34 @@ def create(request):
     
     # return redirect('/index/') # index(전체 게시물)로 가기
     return redirect(f'/posts/{post.id}/') # str이라서 f스트링으로 감싸주기
+
+def delete(request, id):
+    post = Post.objects.get(id=id) # 게시물 찾기
+    post.delete() # delete 라는 메서드 실행
+    
+    return redirect('/index/')
+
+
+def edit(request, id):
+    post = Post.objects.get(id=id) 
+   
+    context = {
+       'post': post,
+     }
+    
+    return render(request, 'edit.html', context)
+    
+def update(request, id):
+    # 기존 정보 가져오기
+    post = Post.objects.get(id=id)
+    
+    # 새로운 정보 가져오기
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    
+    # 기존정보를 새로운 정보로 바꾸기
+    post.title = title
+    post.content = content
+    post.save()
+    
+    return redirect(f'/posts/{post.id}')
