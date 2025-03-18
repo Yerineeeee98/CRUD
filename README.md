@@ -59,3 +59,17 @@ python manage.py makemigration
 python manage.py migrate
 ```
 
+- create super user
+```shell
+python manage.py createsuperuser
+```
+username - admin
+passwd - 1234
+
+- admin 페이지에 모델 등록(`admin.py`)
+```python
+from .models import Post
+
+# Register your models here.
+admin.site.register(Post) # post 칸이 나와야함
+
