@@ -13,8 +13,14 @@
 django-admin startproject crud .
 ```
 
-- 앱 생성
+- 앱 생성/  앱 등록(settings.py에에)
 ```shell
 django-admin startapp posts # posts들을 관리할 앱 생성
 ```
 
+- urls.py에 views 불러오기
+```shell
+from posts import views
+```
+
+- posts 앱에 templates 생성
