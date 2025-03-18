@@ -67,9 +67,20 @@ username - admin
 passwd - 1234
 
 - admin 페이지에 모델 등록(`admin.py`)
-```python
-from .models import Post
+    - ```python
+            from .models import Post
 
-# Register your models here.
-admin.site.register(Post) # post 칸이 나와야함
+            # Register your models here.
+            admin.site.register(Post) # post 칸이 나와야함
+      ```
 
+- ```python
+    posts = Post.objects.all() # Post 모델의 모든 레코드를 가져옴 (QuerySet 형태)
+    ```
+
+-   ```python
+    {% for post in posts %}
+        <p>{{post}}</p>
+    {% endfor %}
+    # posts를 순회하면서 각 post를 <p> 태그로 출력
+    ```
